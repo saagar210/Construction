@@ -13,6 +13,10 @@ import { OshaPage } from './components/osha/OshaPage';
 import { SettingsPage } from './components/settings/SettingsPage';
 import { SetupWizard } from './components/settings/SetupWizard';
 import { ImportPage } from './components/import/ImportPage';
+import { ToolboxTalksPage } from './pages/ToolboxTalksPage';
+import { ToolboxCreatePage } from './pages/ToolboxCreatePage';
+import { ToolboxTalkDetailPage } from './pages/ToolboxTalkDetailPage';
+import { JsaPage } from './pages/JsaPage';
 import { useSettingsStore } from './stores/settingsStore';
 import { useKeyboardShortcuts, createGlobalShortcuts } from './hooks/useKeyboardShortcuts';
 import './index.css';
@@ -34,6 +38,10 @@ function AppRoutes() {
         <Route path="/incidents/:id/rca" element={<RcaPage />} />
         <Route path="/osha" element={<OshaPage />} />
         <Route path="/import" element={<ImportPage />} />
+        <Route path="/toolbox" element={<ToolboxTalksPage />} />
+        <Route path="/toolbox/new" element={<ToolboxCreatePage />} />
+        <Route path="/toolbox/:id" element={<ToolboxTalkDetailPage />} />
+        <Route path="/jsa" element={<JsaPage />} />
         <Route path="/settings" element={<SettingsPage />} />
       </Routes>
     </Layout>

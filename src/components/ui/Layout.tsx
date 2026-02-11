@@ -10,6 +10,8 @@ const navItems = [
   { to: '/dashboard', label: 'Dashboard' },
   { to: '/incidents', label: 'Incidents' },
   { to: '/osha', label: 'OSHA Forms' },
+  { to: '/toolbox', label: 'Toolbox Talks' },
+  { to: '/jsa', label: 'JSA' },
   { to: '/import', label: 'Import' },
   { to: '/settings', label: 'Settings' },
 ];
