@@ -119,14 +119,10 @@ pnpm tauri build
 ```bash
 # Rust tests
 cd src-tauri && cargo test
-
-# React tests
-pnpm test
 ```
 
 ### Test Coverage
 - **Rust**: 15 tests covering DB operations, OSHA calculations, validation
-- **React**: 2 component tests (SetupWizard, IncidentList)
 - **Type Safety**: TypeScript strict mode, 100% coverage
 
 ### Results
@@ -151,7 +147,7 @@ Security Audit: 0 critical/high issues ✅
 | **Backend** | Rust | 1.70+ |
 | **Database** | SQLite via rusqlite | 3.x |
 | **Error Handling** | thiserror + anyhow | Latest |
-| **Testing** | Vitest + React Testing Library | Latest |
+| **Testing** | Rust unit tests | 15 tests |
 | **Routing** | React Router 7 | Latest |
 
 ---
@@ -194,8 +190,6 @@ construction-safety-tracker/
 │   └── tauri.conf.json
 │
 ├── README.md                     # User-facing documentation
-├── FINAL_IMPLEMENTATION_REPORT.md
-├── AUDIT_FIXES_REPORT.md
 └── package.json
 ```
 
@@ -324,9 +318,7 @@ cat tsconfig.json | grep '"strict"'
 
 ## 📝 Documentation
 
-- **[FINAL_IMPLEMENTATION_REPORT.md](./FINAL_IMPLEMENTATION_REPORT.md)** - Complete feature list and architecture
-- **[AUDIT_FIXES_REPORT.md](./AUDIT_FIXES_REPORT.md)** - Security audit results and fixes
-- **[SECURITY_AUDIT.md](./SECURITY_AUDIT.md)** - Detailed security analysis
+- **[README.md](./README.md)** - Setup, features, and project structure
 
 ---
 
@@ -355,7 +347,7 @@ cat tsconfig.json | grep '"strict"'
 Contributions welcome! Please:
 
 1. Create a feature branch: `git checkout -b feature/your-feature`
-2. Make changes and test: `pnpm test && cargo test`
+2. Make changes and verify: `pnpm build && cargo test`
 3. Commit with conventional commits: `git commit -m "feat: ..."`
 4. Push and create a pull request
 
@@ -363,7 +355,7 @@ Contributions welcome! Please:
 - **Rust**: No `unwrap()` in production code
 - **React**: Functional components only
 - **TypeScript**: Strict mode, no `any` types
-- **Tests**: Write tests for new features
+- **Verification**: Ensure `pnpm build` and `cargo test` pass before PR
 
 ---
 
