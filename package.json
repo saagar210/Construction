@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "dev:normal": "tauri dev",
+    "dev:lean": "./scripts/lean-dev.sh",
+    "clean:heavy": "./scripts/cleanup-heavy.sh",
+    "clean:all-local": "./scripts/cleanup-all.sh"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",
