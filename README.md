@@ -93,11 +93,29 @@ cd src-tauri && cargo build && cd ..
 ### Development
 
 ```bash
-# Start dev server with hot reload
-pnpm tauri dev
+# Normal dev mode (fastest incremental rebuilds, uses local build caches)
+pnpm dev:normal
 
-# The app will open at http://localhost:5173 with Tauri backend
+# Lean dev mode (minimal local disk growth, slower restarts)
+pnpm dev:lean
+
+# Tauri frontend URL
+# http://localhost:1420
 ```
+
+### Cleanup Commands
+
+```bash
+# Remove heavy build artifacts only (keeps dependencies for speed)
+pnpm clean:heavy
+
+# Remove all local reproducible caches (includes node_modules)
+pnpm clean:all-local
+```
+
+### Normal vs Lean Dev Tradeoffs
+- `pnpm dev:normal`: fastest hot reload and rebuilds, but can grow `src-tauri/target` and `node_modules/.vite`.
+- `pnpm dev:lean`: uses temporary cache locations for Rust and Vite, then cleans heavy artifacts automatically when you exit; uses less disk but has slower startup/rebuild times.
 
 ### Build
 
